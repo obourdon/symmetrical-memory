@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 # Create and initialize the image backing storage. This is probably the
 # hackiest part of this entire application build. To summarize:
 # * tftp and nginx serve image data to the nodes
@@ -24,7 +26,7 @@
 # override any other image data dropped in by the Ironic Conductor
 docker volume create --name slab_imagedata
 docker run -v slab_imagedata:/imagedata \
-           -it \
-           --name slab_imagedata \
-           --rm \
-           slab_imagedata
+	-it \
+	--name slab_imagedata \
+	--rm \
+	slab_imagedata

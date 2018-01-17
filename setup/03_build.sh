@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 # as root
 cd /home/hoge/kolla
 source .kolla/bin/activate

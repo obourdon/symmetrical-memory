@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 docker build -t slab_dnsmasq dnsmasq/.
 docker build -t slab_tftp tftp/.
 docker build -t slab_imagedata imagedata/.

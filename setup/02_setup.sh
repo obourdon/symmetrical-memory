@@ -1,8 +1,10 @@
+#!/bin/bash -e
+
 # begin by installing system dependencies
 sudo yum install -y epel-release
 sudo yum install -y git vim python-pip python-devel \
-  libffi-devel gcc openssl-devel ansible ntp python-virtualenv \
-  pyton-netaddr screen
+	libffi-devel gcc openssl-devel ansible ntp python-virtualenv \
+	pyton-netaddr screen
 
 # install and start ntp for system synchronization
 sudo systemctl enable ntpd.service
@@ -67,9 +69,9 @@ cp kolla-ansible/ansible/inventory/* .
 mkdir config
 mkdir config/ironic
 curl http://tarballs.openstack.org/ironic-python-agent/coreos/files/coreos_production_pxe.vmlinuz \
-  -o config/ironic/ironic-agent.kernel -4
+	-o config/ironic/ironic-agent.kernel -4
 curl http://tarballs.openstack.org/ironic-python-agent/coreos/files/coreos_production_pxe_image-oem.cpio.gz \
-  -o config/ironic/ironic-agent.initramfs -4
+	-o config/ironic/ironic-agent.initramfs -4
 
 # copy configuration
 cp kolla-ansible/ansible/inventory/* .
@@ -77,5 +79,5 @@ cp ~/symmetrical-memory/ironic/globals.yml globals.yml
 
 # Install and start the docker registry
 sudo docker run -d --name registry --restart=always -p 4000:5000 \
-  -v /registry:/var/lib/registry registry:2 
+	-v /registry:/var/lib/registry registry:2 
 

@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 docker stop slab_ironic_api
 docker rm slab_ironic_api
 

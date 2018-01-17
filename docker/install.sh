@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 ./10_slab_rabbit.sh
 ./20_slab_mariadb.sh
 ./30_slab_imagedata.sh
